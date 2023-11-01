@@ -96,7 +96,10 @@ DATABASES = {
 #OPENAI_API_KEY = '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'
 #OPENAI_API_KEY = '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'
 
-OPENAI_API_KEY = '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'
+# OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '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'
+# 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
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -62,7 +62,7 @@ class GenerarImagenes(APIView):
         data = {
             'prompt': text,
             'n': 1,
-            'size': '256x256'
+            'size': '512x512'
         }
 
         response = requests.post(api_url, json=data, headers=headers)
