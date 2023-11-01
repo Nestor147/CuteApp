@@ -10,6 +10,8 @@ from .models import ImagenesCreadas,Usuario,CancionesCreadas,TipsQueLeDigo,Comid
 from .seriallizers import ImagenesCreadasSeriallizer,CancionesCreadasSerializer,TipsQueLeDigoSerializer
 from django.contrib.auth.models import User
 import json
+import os
+
 
 class GenerarLetraMusica(APIView):
     def post(self, request, format=None):
@@ -25,7 +27,7 @@ class GenerarLetraMusica(APIView):
             prompt=text,
             max_tokens=256,
             temperature=0.8,
-            api_key=settings.OPENAI_API_KEY
+            api_key=os.environ.get("KEY_CUTEAPP")
         )
 
         # Extraer la canción generada del response
@@ -53,7 +55,7 @@ class GenerarImagenes(APIView):
             return Response({'error':'El campo text no puede estar vacio.'}, status=status.HTTP_400_BAD_REQUEST)
         
         api_url = "https://api.openai.com/v1/images/generations"
-        api_key = settings.OPENAI_API_KEY
+        api_key = os.environ.get("KEY_CUTEAPP")
 
         headers = {
             'Authorization': f'Bearer {api_key}'
@@ -159,7 +161,7 @@ class GenerarRecetas(APIView):
                 prompt=prompt,
                 max_tokens=500,  
                 temperature=0.8,
-                api_key=settings.OPENAI_API_KEY
+                api_key=os.environ.get("KEY_CUTEAPP")
             )
 
             recipe_data = response.choices[0].text.strip()

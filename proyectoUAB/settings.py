@@ -92,7 +92,7 @@ DATABASES = {
 
 
 
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+KEY_CUTEAPP = os.environ.get("KEY_CUTEAPP")
 
 
 
