@@ -72,7 +72,7 @@ class GenerarImagenes(APIView):
         
         image_url = response.json()["data"][0]["url"]
 
-        nombre_imagen = text[:70] 
+        nombre_imagen = text[:50] 
 
         
         
