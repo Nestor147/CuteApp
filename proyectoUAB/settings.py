@@ -91,14 +91,9 @@ DATABASES = {
 } 
 
 
-#OPENAI_API_KEY = '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'
-#OPENAI_API_KEY = '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'
-#OPENAI_API_KEY = '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'
-#OPENAI_API_KEY = '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'
 
-# OPENAI_API_KEY = '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'
-OPENAI_API_KEY = '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'
-# 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
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+
 
 
 # Password validation
