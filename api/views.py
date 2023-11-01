@@ -72,7 +72,7 @@ class GenerarImagenes(APIView):
         
         image_url = response.json()["data"][0]["url"]
 
-        nombre_imagen = text[:50] 
+        nombre_imagen = text[:70] 
 
         
         
@@ -132,7 +132,7 @@ class ChatbotView(APIView):
             prompt=user_message,
             max_tokens=50,  
             temperature=0.7,
-            api_key=api_key  
+            api_key=settings.OPENAI_API_KEY 
         )
 
         return response.choices[0].text.strip()
